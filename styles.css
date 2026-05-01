@@ -29,6 +29,8 @@
   
   --color-app-bg: rgba(255, 255, 255, 0.85);
   --app-shadow: 0 24px 80px rgba(0,0,0,0.1), inset 0 1px 1px rgba(255,255,255,0.5);
+  
+  --color-input-bg: #FFFFFF;
 }
 
 [data-theme="dark"] {
@@ -46,6 +48,8 @@
   
   --color-app-bg: rgba(15, 23, 42, 0.85);
   --app-shadow: 0 24px 80px rgba(0,0,0,0.5), inset 0 1px 1px rgba(255,255,255,0.05);
+  
+  --color-input-bg: rgba(0, 0, 0, 0.2);
 }
 
 * {
@@ -352,8 +356,8 @@ a {
 .form-control {
   width: 100%;
   padding: 14px 18px;
-  background: var(--color-white);
-  border: 1px solid #E5E7EB;
+  background: var(--color-input-bg);
+  border: 1px solid var(--color-border);
   border-radius: var(--border-radius-md);
   font-family: var(--font-family);
   font-size: 1rem;
