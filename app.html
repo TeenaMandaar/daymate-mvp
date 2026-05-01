@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daymate MVP App</title>
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+  <div class="app-container">
+    <div class="app-header">
+      <div class="logo gradient-text" style="font-size: 1.25rem;">Daymate</div>
+    </div>
+    
+    <div class="app-content">
+      
+      <!-- Screen 1: Welcome -->
+      <div id="screen-welcome" class="app-screen active text-center">
+        <h2 style="margin-top: 40px; margin-bottom: 20px;">Welcome to <span class="gradient-text">Daymate</span></h2>
+        <p style="margin-bottom: 40px;">Never go solo again. Pick a plan, and we'll match you with a verified companion to join you.</p>
+        <button class="btn btn-primary" onclick="appState.goTo('choose-plan')" style="width: 100%;">Start Exploring Plans</button>
+        <p style="margin-top: 20px; font-size: 0.85rem;">
+          <a href="index.html" style="text-decoration: underline;">Back to Website</a>
+        </p>
+      </div>
+
+      <!-- Screen 2: Choose a Plan -->
+      <div id="screen-choose-plan" class="app-screen">
+        <h3 class="text-center" style="margin-bottom: 20px;">What do you want to do?</h3>
+        
+        <div id="plans-container" style="display: flex; flex-direction: column; gap: 15px;">
+          <!-- Injected via JS -->
+        </div>
+
+        <button class="btn btn-secondary" onclick="appState.goTo('welcome', true)" style="width: 100%; margin-top: 20px;">Back</button>
+      </div>
+
+      <!-- Screen 3: Plan Details -->
+      <div id="screen-plan-details" class="app-screen">
+        <h3 id="detail-title" class="text-center" style="margin-bottom: 10px;"></h3>
+        <p id="detail-desc" class="text-center" style="margin-bottom: 20px;"></p>
+        
+        <div style="background: var(--color-surface); padding: 15px; border-radius: var(--border-radius-sm); margin-bottom: 20px; border: 1px solid var(--color-border);">
+          <p style="margin-bottom: 5px;"><strong>Duration:</strong> <span id="detail-duration" style="color: var(--color-text-main);"></span></p>
+          <p style="margin-bottom: 5px;"><strong>Starting Price:</strong> <span id="detail-price" style="color: var(--color-text-main);"></span></p>
+        </div>
+
+        <div style="background: rgba(228, 8, 73, 0.1); padding: 15px; border-radius: var(--border-radius-sm); margin-bottom: 20px; border-left: 4px solid var(--color-deep-pink);">
+          <p style="margin: 0; font-size: 0.9rem; color: var(--color-text-main);"><strong>Safety Note:</strong> All meetups happen at public venues. Companions are manually verified. Do not share sensitive personal information.</p>
+        </div>
+
+        <h4 style="margin-bottom: 10px;">What happens next?</h4>
+        <ol style="padding-left: 20px; margin-bottom: 30px; font-size: 0.95rem; color: var(--color-muted-grey);">
+          <li>Fill out your basic details.</li>
+          <li>We review your request.</li>
+          <li>We match you with an available companion.</li>
+        </ol>
+
+        <div style="display: flex; gap: 10px;">
+          <button class="btn btn-secondary" onclick="appState.goTo('choose-plan', true)" style="flex: 1;">Back</button>
+          <button class="btn btn-primary" onclick="appState.goTo('user-form')" style="flex: 2;">Continue</button>
+        </div>
+      </div>
+
+      <!-- Screen 4: Basic User Form -->
+      <div id="screen-user-form" class="app-screen">
+        <h3 class="text-center" style="margin-bottom: 20px;">Basic Details</h3>
+        
+        <form id="booking-form" onsubmit="appState.submitForm(event)">
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" class="form-control" required placeholder="e.g. Rahul Sharma">
+          </div>
+          <div style="display: flex; gap: 15px;">
+            <div class="form-group" style="flex: 1;">
+              <label>Age</label>
+              <input type="number" class="form-control" required placeholder="e.g. 24">
+            </div>
+            <div class="form-group" style="flex: 1;">
+              <label>Gender</label>
+              <select class="form-control" required>
+                <option value="">Select</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>City & Preferred Area</label>
+            <input type="text" class="form-control" required placeholder="e.g. Bandra, Mumbai">
+          </div>
+          <div class="form-group">
+            <label>Date & Time</label>
+            <input type="datetime-local" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label>Special Note (Optional)</label>
+            <textarea class="form-control" rows="2" placeholder="Any preferences?"></textarea>
+          </div>
+
+          <div style="display: flex; gap: 10px; margin-top: 30px;">
+            <button type="button" class="btn btn-secondary" onclick="appState.goTo('plan-details', true)" style="flex: 1;">Back</button>
+            <button type="submit" class="btn btn-primary" style="flex: 2;">Submit Request</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Screen 5: Confirmation -->
+      <div id="screen-confirmation" class="app-screen text-center">
+        <div style="font-size: 4rem; margin: 30px 0;">🎉</div>
+        <h2 style="margin-bottom: 20px;">Request Received!</h2>
+        <p style="margin-bottom: 10px;">Your request has been received safely.</p>
+        <p style="margin-bottom: 10px;">Our team will review your details and contact you via WhatsApp.</p>
+        <p style="margin-bottom: 30px;"><strong>Companion matching happens after basic verification.</strong></p>
+        
+        <button class="btn btn-secondary" onclick="appState.reset()" style="width: 100%;">Book Another Plan</button>
+        <p style="margin-top: 20px; font-size: 0.85rem;">
+          <a href="index.html" style="text-decoration: underline;">Back to Website</a>
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
