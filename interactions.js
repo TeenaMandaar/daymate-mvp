@@ -39,24 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 3. Custom Gradient Cursor
-  const cursor = document.createElement('div');
-  cursor.classList.add('custom-cursor');
-  document.body.appendChild(cursor);
-
-  document.addEventListener('mousemove', (e) => {
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
-  });
-
-  // Expand cursor on clickable elements
-  const clickables = document.querySelectorAll('a, button, .plan-card, .vibe-tag');
-  clickables.forEach(el => {
-    el.addEventListener('mouseenter', () => cursor.classList.add('cursor-hover'));
-    el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-hover'));
-  });
-  
-  // 4. Vibe Tag Selection Logic
+  // 3. Vibe Tag Selection Logic
   const vibeTags = document.querySelectorAll('.vibe-tag');
   vibeTags.forEach(tag => {
     tag.addEventListener('click', function() {
