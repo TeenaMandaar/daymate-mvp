@@ -5,14 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Daymate MVP App</title>
   <link rel="stylesheet" href="styles.css">
+  <script>
+    // Prevent FOUC
+    const savedTheme = localStorage.getItem('daymate-theme') || 'light';
+    if (savedTheme === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  </script>
 
 </head>
 <body>
 
   <div class="app-container">
-    <div class="app-header">
+    <div class="app-header" style="display: flex; justify-content: space-between; align-items: center;">
       <div class="logo gradient-text" style="font-size: 1.25rem;">Daymate</div>
-      <button class="sos-btn" onclick="alert('SOS Alert Triggered! Safety team notified.')">🚨 SOS</button>
+      <div style="display: flex; gap: 10px; align-items: center;">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
+        <button class="sos-btn" onclick="alert('SOS Alert Triggered! Safety team notified.')" style="position: static;">🚨 SOS</button>
+      </div>
     </div>
     
     <div class="app-content">
@@ -141,5 +151,19 @@
   </div>
 
   <script src="app.js"></script>
+  <script>
+    document.getElementById('theme-toggle').addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('daymate-theme', newTheme);
+      document.getElementById('theme-toggle').textContent = newTheme === 'dark' ? '☀️' : '🌙';
+    });
+    
+    // Set initial button state
+    if (document.documentElement.getAttribute('data-theme') === 'dark') {
+      document.getElementById('theme-toggle').textContent = '☀️';
+    }
+  </script>
 </body>
 </html>

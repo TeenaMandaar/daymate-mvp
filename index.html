@@ -6,6 +6,13 @@
   <title>Daymate | India's First Hangout App</title>
   <meta name="description" content="Choose a real-world plan like coffee, movies, lunch, dinner, or comedy. Daymate matches you with a verified companion who is ready to join.">
   <link rel="stylesheet" href="styles.css">
+  <script>
+    // Prevent FOUC by setting theme immediately
+    const savedTheme = localStorage.getItem('daymate-theme') || 'light';
+    if (savedTheme === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  </script>
   <!-- Load Phosphor Icons for clean, modern iconography -->
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
@@ -14,13 +21,14 @@
   <!-- Header -->
   <header class="header">
     <div class="container">
-      <div class="header-nav">
+      <nav class="header-nav">
         <div class="logo gradient-text">Daymate</div>
-        <nav>
+        <div style="display: flex; align-items: center; gap: 15px;">
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode" style="background: none; border: none; cursor: pointer; font-size: 1.2rem;">🌙</button>
           <a href="#how-it-works" style="margin-right: 20px; font-weight: 500;">How it Works</a>
           <a href="app.html" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.9rem;">Try MVP App</a>
-        </nav>
-      </div>
+        </div>
+      </nav>
     </div>
   </header>
 
@@ -173,7 +181,7 @@
   </section>
 
   <!-- Final CTA -->
-  <section class="section text-center" style="background-color: var(--color-peach); border-top: 1px solid rgba(0,0,0,0.05); padding: 80px 20px;">
+  <section class="section text-center" style="background-color: var(--color-peach); border-top: 1px solid var(--color-border); padding: 80px 20px;">
     <div class="container">
       <h2 style="margin-bottom: 24px;">Ready to stop going solo?</h2>
       <a href="app.html" class="btn btn-primary">Try the MVP App</a>
@@ -190,5 +198,19 @@
   </footer>
 
   <script src="interactions.js"></script>
+  <script>
+    document.getElementById('theme-toggle').addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('daymate-theme', newTheme);
+      document.getElementById('theme-toggle').textContent = newTheme === 'dark' ? '☀️' : '🌙';
+    });
+    
+    // Set initial button state
+    if (document.documentElement.getAttribute('data-theme') === 'dark') {
+      document.getElementById('theme-toggle').textContent = '☀️';
+    }
+  </script>
 </body>
 </html>
