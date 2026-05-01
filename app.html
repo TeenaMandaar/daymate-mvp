@@ -12,6 +12,7 @@
   <div class="app-container">
     <div class="app-header">
       <div class="logo gradient-text" style="font-size: 1.25rem;">Daymate</div>
+      <button class="sos-btn" onclick="alert('SOS Alert Triggered! Safety team notified.')">🚨 SOS</button>
     </div>
     
     <div class="app-content">
@@ -96,9 +97,23 @@
             <label>Date & Time</label>
             <input type="datetime-local" class="form-control" required>
           </div>
-          <div class="form-group">
-            <label>Special Note (Optional)</label>
-            <textarea class="form-control" rows="2" placeholder="Any preferences?"></textarea>
+          <div class="form-group" style="background: rgba(251, 102, 9, 0.05); padding: 15px; border-radius: var(--border-radius-md); border: 1px solid var(--color-coral);">
+            <label style="color: var(--color-coral); font-weight: 700;">Vibe Check (Optional)</label>
+            <p style="font-size: 0.8rem; margin-bottom: 10px;">Select your mood and tags so we can match your energy perfectly.</p>
+            
+            <div class="slider-container">
+              <span style="font-size: 0.85rem; font-weight: 500;">Chill</span>
+              <input type="range" min="1" max="5" value="3">
+              <span style="font-size: 0.85rem; font-weight: 500;">High Energy</span>
+            </div>
+
+            <div class="vibe-tags-container">
+              <div class="vibe-tag">🗣️ Yapper</div>
+              <div class="vibe-tag">🎧 Good Listener</div>
+              <div class="vibe-tag">📸 Aesthetic Hunter</div>
+              <div class="vibe-tag">🍕 Foodie</div>
+              <div class="vibe-tag">🛋️ Laid Back</div>
+            </div>
           </div>
 
           <div style="display: flex; gap: 10px; margin-top: 30px;">

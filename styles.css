@@ -427,3 +427,105 @@ a {
   text-align: center;
   background: var(--color-white);
 }
+
+/* Custom Gradient Cursor */
+.custom-cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  background: var(--primary-gradient);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  transition: width 0.2s, height 0.2s, background-color 0.2s;
+  box-shadow: var(--glow-primary);
+  mix-blend-mode: multiply;
+}
+.custom-cursor.cursor-hover {
+  width: 40px;
+  height: 40px;
+  background: rgba(251, 102, 9, 0.2);
+  mix-blend-mode: normal;
+  border: 2px solid var(--color-coral);
+}
+
+/* Floating Hero Stickers */
+.floating-sticker {
+  position: absolute;
+  font-size: 3rem;
+  animation: floatSticker 6s ease-in-out infinite;
+  z-index: 0;
+  filter: drop-shadow(0 10px 15px rgba(0,0,0,0.1));
+}
+.sticker-1 { top: 10%; left: 15%; animation-delay: 0s; }
+.sticker-2 { top: 60%; right: 10%; animation-delay: 2s; }
+.sticker-3 { bottom: 10%; left: 25%; animation-delay: 1s; font-size: 2.5rem;}
+
+@keyframes floatSticker {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(10deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+/* SOS Button */
+.sos-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #FFE8DD;
+  color: #E40849;
+  border: 1px solid #E40849;
+  border-radius: 50px;
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+.sos-btn:hover {
+  background: #E40849;
+  color: white;
+  box-shadow: 0 4px 15px rgba(228, 8, 73, 0.3);
+}
+
+/* Vibe Check Tags & Slider */
+.vibe-tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+.vibe-tag {
+  background: var(--color-bg);
+  border: 1px solid #E5E7EB;
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+.vibe-tag:hover {
+  border-color: var(--color-coral);
+}
+.vibe-tag.selected {
+  background: var(--color-coral);
+  color: white;
+  border-color: var(--color-coral);
+  box-shadow: var(--glow-primary);
+}
+
+.slider-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.slider-container input[type=range] {
+  flex: 1;
+  margin: 0 15px;
+  accent-color: var(--color-coral);
+}
+
