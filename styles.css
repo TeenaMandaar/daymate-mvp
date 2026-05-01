@@ -26,6 +26,9 @@
   --border-radius-md: 16px;
   --border-radius-sm: 10px;
   --transition-speed: 0.3s;
+  
+  --color-app-bg: rgba(255, 255, 255, 0.85);
+  --app-shadow: 0 24px 80px rgba(0,0,0,0.1), inset 0 1px 1px rgba(255,255,255,0.5);
 }
 
 [data-theme="dark"] {
@@ -40,6 +43,9 @@
   
   --glow-primary: 0 10px 40px rgba(228, 8, 73, 0.4);
   --glow-surface: 0 10px 40px rgba(0, 0, 0, 0.3);
+  
+  --color-app-bg: rgba(15, 23, 42, 0.85);
+  --app-shadow: 0 24px 80px rgba(0,0,0,0.5), inset 0 1px 1px rgba(255,255,255,0.05);
 }
 
 * {
@@ -365,11 +371,11 @@ a {
 .app-container {
   max-width: 480px;
   margin: 60px auto;
-  background: rgba(255, 255, 255, 0.85);
+  background: var(--color-app-bg);
   backdrop-filter: blur(30px);
   border: 1px solid var(--color-border);
   border-radius: var(--border-radius-xl);
-  box-shadow: 0 24px 80px rgba(0,0,0,0.1), inset 0 1px 1px rgba(255,255,255,0.5);
+  box-shadow: var(--app-shadow);
   overflow: hidden;
   min-height: 650px;
   display: flex;
