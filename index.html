@@ -3,211 +3,330 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Daymate | India's First Hangout App</title>
-  <meta name="description" content="Choose a real-world plan like coffee, movies, lunch, dinner, or comedy. Daymate matches you with a verified companion who is ready to join.">
+  <title>Daymate | India's First Platonic Hangout App</title>
+  <meta name="description" content="Stop going solo. Daymate matches you with a verified companion for real-world activities — coffee, movies, comedy, dinner. Strictly platonic. Public venues only.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script>
-    // Prevent FOUC by setting theme immediately
     const savedTheme = localStorage.getItem('daymate-theme') || 'light';
-    if (savedTheme === 'dark') {
-      document.documentElement.setAttribute('data-theme', 'dark');
-    }
+    if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
   </script>
-  <!-- Load Phosphor Icons for clean, modern iconography -->
-  <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 <body>
 
   <!-- Header -->
   <header class="header">
-    <div class="container">
-      <nav class="header-nav">
-        <div class="logo gradient-text">Daymate</div>
-        <div style="display: flex; align-items: center; gap: 15px;">
-          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode" style="background: none; border: none; cursor: pointer; font-size: 1.2rem;">🌙</button>
-          <a href="#how-it-works" style="margin-right: 20px; font-weight: 500;">How it Works</a>
-          <a href="app.html" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.9rem;">Try MVP App</a>
-        </div>
-      </nav>
-    </div>
+    <nav class="header-nav">
+      <div class="logo">Daymate<span class="logo-dot">.</span></div>
+      <div class="nav-links">
+        <a href="#how-it-works">How it Works</a>
+        <a href="#plans">Plans</a>
+        <a href="#safety">Safety</a>
+      </div>
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
+        <a href="app.html" class="btn btn-primary">Try the App →</a>
+      </div>
+    </nav>
   </header>
 
   <!-- Hero Section -->
   <section class="hero">
-    <div class="container" style="position: relative;">
-      <div class="floating-sticker sticker-1">🍿</div>
-      <div class="floating-sticker sticker-2">☕</div>
-      <div class="floating-sticker sticker-3">🎤</div>
-      <div style="position: relative; z-index: 1;">
-        <h1>India's first hangout app for those who <span class="gradient-text">hate going solo</span></h1>
-        <p class="subheadline">Strictly platonic hangouts. Clear boundaries. Public venues only. Choose a plan, and we match you with a verified companion ready to join.</p>
+    <div class="hero-badge">🇮🇳 India's first activity-matching platform</div>
+    <h1>Stop going solo.<br><span class="gradient-text">Find your hangout buddy.</span></h1>
+    <p class="hero-sub">Pick a real-world plan. We match you with a verified companion. <br>Strictly platonic. Public venues. Zero awkwardness.</p>
+    
+    <div class="hero-ctas">
+      <a href="app.html" class="btn btn-primary btn-lg">Try the MVP App</a>
+      <a href="https://forms.gle/yLsxrZ6NeVB8j9bM6" target="_blank" class="btn btn-outline btn-lg">Become a Companion</a>
+    </div>
+
+    <div class="hero-trust">
+      <div class="trust-item">✅ Manually verified companions</div>
+      <div class="trust-item">📍 Public venues only</div>
+      <div class="trust-item">🚨 In-app SOS</div>
+      <div class="trust-item">🤝 100% platonic</div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="phone-mockup">
+        <div class="phone-screen">
+          <div class="mock-header">
+            <span class="mock-logo">Daymate</span>
+            <span class="mock-sos">🚨 SOS</span>
+          </div>
+          <p class="mock-title">What do you want to do?</p>
+          <div class="mock-plan active">🍿 Movie Plan <span>~3 hrs • ₹300</span></div>
+          <div class="mock-plan">☕ Coffee Plan <span>~1.5 hrs • ₹400</span></div>
+          <div class="mock-plan">🍽️ Dinner Plan <span>~2.5 hrs • ₹800</span></div>
+          <div class="mock-plan">🎤 Comedy Plan <span>~2 hrs • ₹500</span></div>
+        </div>
       </div>
-      <div class="hero-ctas">
-        <a href="https://forms.gle/yLsxrZ6NeVB8j9bM6" target="_blank" class="btn btn-primary">Become a Companion</a>
-        <a href="https://forms.gle/rFxqe9opBuTYGWZc9" target="_blank" class="btn btn-secondary">Get Early Access</a>
+      <div class="floating-card card-match">
+        <div class="card-avatar">🧑‍🦱</div>
+        <div>
+          <div class="card-name">Arjun, 24</div>
+          <div class="card-tag">✅ Verified • Delhi</div>
+        </div>
       </div>
+      <div class="floating-card card-safe">
+        <span>🔒</span>
+        <div>
+          <div class="card-name">Public venue confirmed</div>
+          <div class="card-tag">PVR Cinemas, Connaught Place</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Bar -->
+  <section class="stats-bar">
+    <div class="stat-item">
+      <div class="stat-number">5+</div>
+      <div class="stat-label">Activity Plans</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <div class="stat-number">100%</div>
+      <div class="stat-label">Platonic Guaranteed</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <div class="stat-number">Delhi</div>
+      <div class="stat-label">Launching First</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <div class="stat-number">₹0</div>
+      <div class="stat-label">To Sign Up</div>
     </div>
   </section>
 
   <!-- How It Works -->
   <section id="how-it-works" class="section reveal">
     <div class="container">
-      <h2 class="text-center">How Daymate Works</h2>
-      <p class="text-center">A clean, safe, and activity-first journey.</p>
-      
+      <div class="section-label">How It Works</div>
+      <h2>From solo to social<br><span class="gradient-text">in 4 simple steps</span></h2>
       <div class="steps-grid">
-        <div class="step-card bento-card">
-          <div class="step-number">1</div>
-          <h3>Choose & Book Your Plan</h3>
-          <p>Movie, coffee, lunch, dinner, or stand-up comedy.</p>
+        <div class="step-card reveal">
+          <div class="step-icon">🎯</div>
+          <div class="step-num">01</div>
+          <h3>Pick Your Plan</h3>
+          <p>Choose from Movie, Coffee, Lunch, Dinner, or Comedy. No swiping. No profiles. Activity first.</p>
         </div>
-        <div class="step-card bento-card">
-          <div class="step-number">2</div>
-          <h3>Book the Activity</h3>
-          <p>Through partner apps like BookMyShow or District in the future.</p>
+        <div class="step-card reveal">
+          <div class="step-icon">✍️</div>
+          <div class="step-num">02</div>
+          <h3>Tell Us Your Vibe</h3>
+          <p>Share your preferred time, area in Delhi, and do a quick vibe check so we match your energy.</p>
         </div>
-        <div class="step-card bento-card">
-          <div class="step-number">3</div>
+        <div class="step-card reveal">
+          <div class="step-icon">⚡</div>
+          <div class="step-num">03</div>
           <h3>We Match You</h3>
-          <p>With a verified companion based on availability, safety checks, and preferences.</p>
+          <p>Our team manually pairs you with a verified companion who fits your plan and your vibe.</p>
         </div>
-        <div class="step-card bento-card">
-          <div class="step-number">4</div>
-          <h3>Meet and Vibe</h3>
-          <p>Meet at the public venue, enjoy the plan, and share feedback.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Safety First Section -->
-  <section class="section reveal" style="background-color: var(--color-peach);">
-    <div class="container">
-      <h2 class="text-center">Why Daymate? <span class="gradient-text">Safety First.</span></h2>
-      <p class="text-center" style="margin-bottom: 40px;">Your safety is our priority. We are built on strict boundaries and zero tolerance for shady behavior.</p>
-      
-      <div class="steps-grid" style="margin-top: 0;">
-        <div class="step-card bento-card">
-          <div style="font-size: 2rem; margin-bottom: 15px;">✅</div>
-          <h3>Verified Companions</h3>
-          <p>Every single companion goes through a manual review process before matching.</p>
-        </div>
-        <div class="step-card bento-card">
-          <div style="font-size: 2rem; margin-bottom: 15px;">📍</div>
-          <h3>Public Venues Only</h3>
-          <p>Plans only happen at highly-rated public cafes, theaters, and venues. No private locations.</p>
-        </div>
-        <div class="step-card bento-card">
-          <div style="font-size: 2rem; margin-bottom: 15px;">🚨</div>
-          <h3>In-App SOS Toolkit</h3>
-          <p>One-tap SOS alerts during your hangout to ensure you always feel perfectly safe.</p>
-        </div>
-        <div class="step-card bento-card">
-          <div style="font-size: 2rem; margin-bottom: 15px;">🤝</div>
-          <h3>Strictly Platonic</h3>
-          <p>Clear community guidelines. Daymate is an activity platform, not a dating app.</p>
+        <div class="step-card reveal">
+          <div class="step-icon">🎉</div>
+          <div class="step-num">04</div>
+          <h3>Meet & Enjoy</h3>
+          <p>Head to the public venue, meet your companion, enjoy the plan, and leave a review.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- User Preview Section -->
-  <section class="section reveal">
+  <!-- Plans Section -->
+  <section id="plans" class="section section-alt reveal">
     <div class="container">
-      <h2 class="text-center">Plans you can choose</h2>
-      <p class="text-center">No browsing profiles. Pick what you want to do first.</p>
-      
+      <div class="section-label">Available Plans</div>
+      <h2>No profiles. <span class="gradient-text">Pick the vibe.</span></h2>
+      <p class="section-sub">We made it activity-first on purpose. Because the best conversations happen when you're doing something.</p>
       <div class="plans-grid">
-        <div class="plan-card bento-card text-center">
-          <span class="plan-icon">🍿</span>
-          <h3 class="plan-title">Movie Plan</h3>
-          <p>Catch the latest blockbuster.</p>
+        <div class="plan-card reveal">
+          <div class="plan-emoji">🍿</div>
+          <h3>Movie Plan</h3>
+          <p>Catch the latest blockbuster with a movie buddy. Includes popcorn plans at partner theaters.</p>
+          <div class="plan-meta"><span>~3 hours</span><span class="plan-price">Starts at ₹300</span></div>
         </div>
-        <div class="plan-card bento-card text-center">
-          <span class="plan-icon">☕</span>
-          <h3 class="plan-title">Coffee Plan</h3>
-          <p>Chill vibes and good conversation.</p>
+        <div class="plan-card reveal">
+          <div class="plan-emoji">☕</div>
+          <h3>Coffee Plan</h3>
+          <p>Chill vibes, good conversation, and a great cup of coffee at a curated cafe.</p>
+          <div class="plan-meta"><span>~1.5 hours</span><span class="plan-price">Starts at ₹400</span></div>
         </div>
-        <div class="plan-card bento-card text-center">
-          <span class="plan-icon">🍽️</span>
-          <h3 class="plan-title">Dinner Plan</h3>
-          <p>Explore a new restaurant together.</p>
+        <div class="plan-card reveal">
+          <div class="plan-emoji">🍱</div>
+          <h3>Lunch Plan</h3>
+          <p>Explore a new restaurant or hit a classic spot for a midday meal with good company.</p>
+          <div class="plan-meta"><span>~2 hours</span><span class="plan-price">Starts at ₹600</span></div>
         </div>
-        <div class="plan-card bento-card text-center">
-          <span class="plan-icon">🎤</span>
-          <h3 class="plan-title">Comedy Plan</h3>
-          <p>Laugh out loud at a stand-up show.</p>
+        <div class="plan-card reveal">
+          <div class="plan-emoji">🍽️</div>
+          <h3>Dinner Plan</h3>
+          <p>Turn a solo dinner into a memorable evening. Curated restaurants. Great conversations.</p>
+          <div class="plan-meta"><span>~2.5 hours</span><span class="plan-price">Starts at ₹800</span></div>
+        </div>
+        <div class="plan-card reveal">
+          <div class="plan-emoji">🎤</div>
+          <h3>Comedy Plan</h3>
+          <p>Laugh out loud at a local stand-up show. Because everything is funnier with company.</p>
+          <div class="plan-meta"><span>~2 hours</span><span class="plan-price">Starts at ₹500</span></div>
+        </div>
+        <div class="plan-card plan-card-cta reveal">
+          <div class="plan-emoji">✨</div>
+          <h3>More Coming Soon</h3>
+          <p>Museum visits, open mics, art galleries, game cafes and more are in the pipeline.</p>
+          <a href="https://forms.gle/rFxqe9opBuTYGWZc9" target="_blank" class="btn btn-primary" style="margin-top: 15px; padding: 10px 20px; font-size: 0.9rem;">Get Early Access</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Companion-First Section -->
-  <section class="section text-center reveal">
-    <div class="container" style="max-width: 800px;">
-      <h2>Join the first batch of <span class="gradient-text">Daymate companions</span></h2>
-      <p style="font-size: 1.1rem; margin-bottom: 30px;">Get rewarded for joining plans you already enjoy, like coffee, movies, lunch, dinner, and live shows. Flexible, safe, and activity-based.</p>
-      <a href="https://forms.gle/yLsxrZ6NeVB8j9bM6" target="_blank" class="btn btn-primary">Apply to be a Companion</a>
-      <p style="margin-top: 20px; font-size: 0.9rem;">*Companion onboarding is selective and trust-based. Open to verified individuals only.</p>
+  <!-- Safety Section -->
+  <section id="safety" class="section reveal">
+    <div class="container">
+      <div class="section-label">Safety & Trust</div>
+      <h2>We take safety<br><span class="gradient-text">seriously. Always.</span></h2>
+      <p class="section-sub">Daymate is not a dating app. Every feature, rule, and decision is built around making you feel 100% safe and comfortable.</p>
+      <div class="safety-grid">
+        <div class="safety-card reveal">
+          <div class="safety-icon">✅</div>
+          <h3>Manual Verification</h3>
+          <p>Every companion is manually reviewed by our team. No bots. No fake profiles. Real, trusted people only.</p>
+        </div>
+        <div class="safety-card reveal">
+          <div class="safety-icon">📍</div>
+          <h3>Public Venues Only</h3>
+          <p>Every single plan happens at a highly-rated public venue. Private locations are strictly not allowed.</p>
+        </div>
+        <div class="safety-card reveal">
+          <div class="safety-icon">🚨</div>
+          <h3>In-App SOS Button</h3>
+          <p>One tap sends an emergency alert and your live location to our safety team. Available during every hangout.</p>
+        </div>
+        <div class="safety-card reveal">
+          <div class="safety-icon">📋</div>
+          <h3>Clear Boundaries</h3>
+          <p>Every companion and user agrees to our strict community guidelines. Zero tolerance for inappropriate behavior.</p>
+        </div>
+        <div class="safety-card reveal">
+          <div class="safety-icon">⭐</div>
+          <h3>Post-Hangout Reviews</h3>
+          <p>Users rate every experience. Poor ratings immediately flag a companion for re-review or removal.</p>
+        </div>
+        <div class="safety-card reveal">
+          <div class="safety-icon">🤝</div>
+          <h3>100% Platonic</h3>
+          <p>This is a hangout platform, not a dating app. That distinction is enforced in every step of the product.</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- FAQ Section -->
+  <!-- Companion Section -->
+  <section class="section section-alt reveal">
+    <div class="container">
+      <div class="companion-split">
+        <div class="companion-text">
+          <div class="section-label">For Companions</div>
+          <h2>Get rewarded for<br><span class="gradient-text">being good company.</span></h2>
+          <p>Join plans you genuinely enjoy — coffee, movies, or comedy shows — and earn money while doing it. Flexible hours. Verified users. You set the availability.</p>
+          <ul class="companion-perks">
+            <li>✅ Earn per activity completed</li>
+            <li>✅ Choose your own schedule</li>
+            <li>✅ Only public venues, always safe</li>
+            <li>✅ Join the first batch in Delhi</li>
+          </ul>
+          <a href="https://forms.gle/yLsxrZ6NeVB8j9bM6" target="_blank" class="btn btn-primary">Apply to be a Companion →</a>
+          <p style="font-size: 0.8rem; margin-top: 12px; opacity: 0.6;">*Companion onboarding is selective and trust-based.</p>
+        </div>
+        <div class="companion-visual">
+          <div class="comp-card">
+            <div class="comp-avatar">👩‍🎓</div>
+            <div class="comp-info">
+              <div class="comp-name">Priya, 23</div>
+              <div class="comp-tag">✅ Verified Companion • 4.9 ★</div>
+              <div class="comp-plans">Movie · Coffee · Dinner</div>
+            </div>
+          </div>
+          <div class="comp-card">
+            <div class="comp-avatar">🧑‍💼</div>
+            <div class="comp-info">
+              <div class="comp-name">Rohan, 26</div>
+              <div class="comp-tag">✅ Verified Companion • 4.8 ★</div>
+              <div class="comp-plans">Comedy · Coffee · Lunch</div>
+            </div>
+          </div>
+          <div class="comp-badge">🎉 Applications Open — Delhi Batch 1</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
   <section class="section reveal">
-    <div class="container" style="max-width: 800px;">
-      <h2 class="text-center" style="margin-bottom: 40px;">Frequently Asked Questions</h2>
-      
-      <div class="faq-item bento-card">
-        <h4 class="faq-question">What is Daymate?</h4>
-        <p class="faq-answer">Daymate is an activity-first hangout platform. You pick a real-world plan, and we match you with a verified companion who joins you for that activity at a public venue.</p>
-      </div>
-      <div class="faq-item bento-card">
-        <h4 class="faq-question">Who can become a companion?</h4>
-        <p class="faq-answer">Anyone who enjoys going out and meets our strict safety and verification guidelines. Companions are selected based on trust, interests, and availability.</p>
-      </div>
-      <div class="faq-item bento-card">
-        <h4 class="faq-question">Is Daymate safe?</h4>
-        <p class="faq-answer">Yes. All companions go through manual verification. Plans are strictly restricted to public venues only. We do not allow private meetups, and we have clear community guidelines.</p>
-      </div>
-      <div class="faq-item bento-card">
-        <h4 class="faq-question">Can users directly choose companions?</h4>
-        <p class="faq-answer">No, Daymate is an activity-first platform. You choose the plan, and our system matches you with an available, verified companion who fits your preferences.</p>
-      </div>
-      <div class="faq-item bento-card">
-        <h4 class="faq-question">How do companions get paid?</h4>
-        <p class="faq-answer">Companions are compensated based on the duration and type of activity. Payments are securely handled through the platform.</p>
+    <div class="container" style="max-width: 780px;">
+      <div class="section-label">FAQ</div>
+      <h2 class="text-center">Got questions?<br><span class="gradient-text">We got you.</span></h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q">Is Daymate a dating app?</div>
+          <div class="faq-a">Absolutely not. Daymate is a strictly platonic activity platform. Companions and users both agree to our community guidelines which prohibit any romantic or inappropriate behavior. Our tagline is "It's a hangout, not a date."</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">How are companions verified?</div>
+          <div class="faq-a">Every companion application is manually reviewed by our team. We check identity, run a background review process, and approve only those who meet our trust standards before they can be matched with any user.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What if I feel unsafe during a hangout?</div>
+          <div class="faq-a">Tap the 🚨 SOS button available directly inside the app at any time during your hangout. It instantly alerts our safety team. All plans also have a set end time so you always know when the hangout concludes.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Can I choose my companion?</div>
+          <div class="faq-a">Daymate is intentionally activity-first, not profile-first. You choose the plan and your vibe. Our matching team then assigns the best available, verified companion. This keeps it experience-focused, not person-focused.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">How does pricing work?</div>
+          <div class="faq-a">Users pay a fixed base fee per plan (starting at ₹300). This covers the companion's time. Daymate takes a platform cut from each booking. Companions earn per completed plan. Simple and transparent.</div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Final CTA -->
-  <section class="section text-center" style="background-color: var(--color-peach); border-top: 1px solid var(--color-border); padding: 80px 20px;">
-    <div class="container">
-      <h2 style="margin-bottom: 24px;">Ready to stop going solo?</h2>
-      <a href="app.html" class="btn btn-primary">Try the MVP App</a>
+  <section class="section cta-section">
+    <div class="container text-center">
+      <h2>Ready to stop going solo?</h2>
+      <p style="font-size: 1.1rem; margin-bottom: 40px; opacity: 0.8;">Try the MVP app, or get early access before we launch to the public.</p>
+      <div class="hero-ctas">
+        <a href="app.html" class="btn btn-primary btn-lg">Try the MVP App</a>
+        <a href="https://forms.gle/rFxqe9opBuTYGWZc9" target="_blank" class="btn btn-outline-white btn-lg">Get Early Access</a>
+      </div>
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <div class="logo gradient-text" style="margin-bottom: 10px;">Daymate</div>
-      <p>&copy; 2026 Daymate. All rights reserved.</p>
-      <p style="font-size: 0.8rem; margin-top: 10px;">Public venues only • Verified companions • Activity-first</p>
+      <div class="footer-inner">
+        <div class="logo">Daymate<span class="logo-dot">.</span></div>
+        <p>India's first platonic hangout platform. Launching in Delhi.</p>
+        <p class="footer-small">Public venues only · Verified companions · Activity-first · © 2026 Daymate</p>
+      </div>
     </div>
   </footer>
 
   <script src="interactions.js"></script>
   <script>
     document.getElementById('theme-toggle').addEventListener('click', () => {
-      const currentTheme = document.documentElement.getAttribute('data-theme');
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', newTheme);
-      localStorage.setItem('daymate-theme', newTheme);
-      document.getElementById('theme-toggle').textContent = newTheme === 'dark' ? '☀️' : '🌙';
+      const cur = document.documentElement.getAttribute('data-theme');
+      const next = cur === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('daymate-theme', next);
+      document.getElementById('theme-toggle').textContent = next === 'dark' ? '☀️' : '🌙';
     });
-    
-    // Set initial button state
     if (document.documentElement.getAttribute('data-theme') === 'dark') {
       document.getElementById('theme-toggle').textContent = '☀️';
     }
