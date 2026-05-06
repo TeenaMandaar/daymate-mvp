@@ -25,12 +25,18 @@
   --bg: #080C14;
   --peach: #111827;
   --white: #1E293B;
-  --text: #FFFFFF; /* Brighter pure white for all text */
-  --muted: #CBD5E1; /* Much lighter gray for all paragraphs */
+  --text: #FFFFFF;
+  --muted: #E2E8F0; /* Even whiter for general paragraphs */
   --surface: rgba(30,41,59,0.75);
   --border: rgba(255,255,255,0.08);
   --input-bg: rgba(15,23,42,0.8);
   --app-bg: rgba(15,23,42,0.92);
+}
+
+/* Make main subheadings pure white in dark mode */
+[data-theme="dark"] .hero-sub,
+[data-theme="dark"] .section-sub {
+  color: #FFFFFF;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
