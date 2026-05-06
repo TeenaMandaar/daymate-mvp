@@ -62,9 +62,9 @@ const appState = {
     const target = document.getElementById(`screen-${screenId}`);
     if (target) {
       if (isBack) {
-        target.classList.add('slide-in-left');
+        target.classList.add('slide-in-left', 'active');
       } else {
-        target.classList.add('slide-in-right');
+        target.classList.add('slide-in-right', 'active');
       }
       this.currentScreen = screenId;
     }
@@ -120,7 +120,7 @@ const appState = {
   reset() {
     this.selectedPlanId = null;
     document.getElementById('booking-form').reset();
-    this.goTo('choose-plan');
+    this.goTo('welcome', true);
   }
 };
 
