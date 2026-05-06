@@ -86,11 +86,11 @@ const appState = {
         <div style="font-size: 2rem; margin-right: 15px; width: 40px; text-align: center;">${plan.icon}</div>
         <div style="flex: 1;">
           <h4 style="margin: 0; font-size: 1.1rem;">${plan.title}</h4>
-          <p style="margin: 0; font-size: 0.85rem; color: var(--color-muted-grey);">
+          <p style="margin: 0; font-size: 0.85rem; color: var(--muted);">
             ${plan.duration} • ${plan.price}
           </p>
         </div>
-        <div style="color: var(--color-coral); font-size: 1.5rem;">›</div>
+        <div style="color: var(--coral); font-size: 1.5rem;">›</div>
       `;
 
       container.appendChild(el);
