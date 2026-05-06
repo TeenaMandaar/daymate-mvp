@@ -25,8 +25,8 @@
   --bg: #080C14;
   --peach: #111827;
   --white: #1E293B;
-  --text: #F1F5F9;
-  --muted: #94A3B8;
+  --text: #FFFFFF; /* Brighter pure white for all text */
+  --muted: #CBD5E1; /* Much lighter gray for all paragraphs */
   --surface: rgba(30,41,59,0.75);
   --border: rgba(255,255,255,0.08);
   --input-bg: rgba(15,23,42,0.8);
@@ -80,7 +80,9 @@ a { text-decoration: none; color: inherit; }
 }
 
 .section-label {
-  display: inline-block;
+  display: block;
+  width: fit-content;
+  margin: 0 auto 18px;
   background: rgba(251,102,9,0.1);
   color: var(--coral);
   font-weight: 700;
@@ -89,7 +91,17 @@ a { text-decoration: none; color: inherit; }
   text-transform: uppercase;
   padding: 6px 16px;
   border-radius: 50px;
-  margin-bottom: 18px;
+  text-align: center;
+}
+
+/* Globally center headings and subheadings in all sections */
+.section > .container > h2 {
+  text-align: center;
+}
+.section > .container > .section-sub {
+  text-align: center;
+  margin: 0 auto 40px;
+  max-width: 650px;
 }
 
 /* Buttons */
